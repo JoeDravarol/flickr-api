@@ -1,0 +1,13 @@
+<h1>Photo Widget</h1>
+
+<%= form_tag(root_url, method: :get) do |f| %>
+  <%= label_tag :nsid, "Flickr ID:" %>
+  <%= text_field_tag :nsid %> <br/><br/>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% if @urls.any? %>
+    <% @urls.each do |url| %>
+        <img src=<%= url %>>
+    <% end %>
+<% end %> 
